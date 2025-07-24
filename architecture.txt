@@ -1,0 +1,46 @@
++---------------------+
+|     User Layer      |
++---------------------+
+| - Customer Portal   |
+| - Admin Interface   |
++---------------------+
+           |
+           v
++---------------------+
+|  Application Layer  |
++---------------------+
+| - Login/Auth Module |
+| - Customer Module   |
+| - Plan Management   |
+| - Billing Engine    |
+| - Report Generator  |
+| - Payment Gateway   |
++---------------------+
+           |
+           v
++----------------------+
+|  Service Integration |
++----------------------+
+| - SMS Gateway        |
+| - Email Notifier     |
+| - Bank/UPI API       |
++----------------------+
+           |
+           v
++---------------------+
+|   Data Layer (DB)   |
++---------------------+
+| - Users             |
+| - Plans             |
+| - Usage Logs        |
+| - Bills             |
+| - Payments          |
++---------------------+
+           |
+           v
++---------------------+
+|  Admin Monitoring   |
++---------------------+
+| - Logs & Alerts     |
+| - Analytics & KPI   |
++---------------------+
