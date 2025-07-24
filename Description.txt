@@ -1,0 +1,48 @@
+Project Description:
+  This project is designed to handle billing and customer service in a telecom company. It allows telecom admins to:
+    Register customers
+    Assign plans (Prepaid/Postpaid)
+    Track call and data usage
+    Generate monthly bills
+    Send payment reminders
+    Mark payments received
+    Handle service deactivation/reactivation
+🧩 Modules:
+1. Customer Management
+Add/Edit/Delete Customer
+View Customer Profile
+2. Plan Management
+Create/Update/Delete Mobile Plans
+Plans: Prepaid, Postpaid, Corporate
+3. Usage Tracking
+Add call/data usage
+View usage per customer
+4. Billing Module
+Monthly bill generation (auto-calculated based on plan and usage)
+Tax and surcharge calculation
+PDF/HTML bill generation (optional)
+5. Payment Module
+Payment due/paid status
+Payment reminders
+Late payment penalty
+6. Service Control
+Temporarily deactivate/reactivate customer for non-payment
+Permanent disconnection
+🧮 Entities and Relationships:
+Entity	Attributes
+Customer	ID, Name, Phone, Email, Address, Plan_ID, Status (Active/Inactive)
+Plan	ID, Name, Type (Prepaid/Postpaid), Monthly Fee, Data Limit, Call Limit
+Usage	Customer_ID, Month, CallMinutesUsed, DataUsed_GB
+Bill	Bill_ID, Customer_ID, Month, TotalAmount, DueDate, Status (Paid/Unpaid)
+Payment	Payment_ID, Bill_ID, Date, Amount, Mode (UPI/Credit Card/NetBanking)
+ 
+📋 Test Cases:
+ 
+Test Case ID	Scenario	Input	Expected Output
+TC01	Add a new customer	Name, Phone, Email, Plan ID	Customer added with unique ID
+TC02	Assign postpaid plan to a customer	Customer ID, Plan ID	Plan linked to customer
+TC03	Add call/data usage	Customer ID, Call=100 mins, Data=5 GB	Usage stored for the month
+TC04	Generate bill for the customer	Customer ID, Month	Bill with total amount calculated and status "Unpaid"
+TC05	Make a payment	Bill ID, Amount, Payment mode	Status marked as "Paid", confirmation receipt generated
+TC06	Exceeding plan limits (postpaid)	Data used > Plan limit, Call mins > limit	Extra charges calculated in bill
+ 
